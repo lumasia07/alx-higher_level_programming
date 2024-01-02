@@ -1,3 +1,7 @@
 #!/usr/bin/python3
 for x in range(90, 64, -1):
-    print(f'{chr(x+32)}{chr(x)}', end='')
+    if x % 2 == 0:
+        i = 0
+    else:
+        i = 32
+    print('{}'.format(chr(x - i)), end='')
