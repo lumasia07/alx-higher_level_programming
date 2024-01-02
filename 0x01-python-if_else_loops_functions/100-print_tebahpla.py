@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-for x in range(90, 64, -1):
+for x in range(90, 64 - 1, -1):
     if x % 2 == 0:
         i = 0
     else:
