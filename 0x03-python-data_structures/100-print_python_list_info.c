@@ -1,7 +1,7 @@
-#include <stdio.h>
+#include <Python.h>
 #include <object.h>
 #include <listobject.h>
-#include <Python.h>
+
 /**
  * print_python_list_info - printd info on lists
  * @p: PyObject list
