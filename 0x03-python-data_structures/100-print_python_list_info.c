@@ -1,12 +1,7 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <sys/types.h>
-#include <python3.4/Python.h>
-#include <python3.4/object.h>
-#include <python3.4/listobject.h>
-
-#define PY_SSIZE_T_CLEAN
-
+#include <object.h>
+#include <listobject.h>
+#include <Python.h>
 /**
  * print_python_list_info - printd info on lists
  * @p: PyObject list
