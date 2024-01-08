@@ -3,7 +3,7 @@
 #include <listobject.h>
 
 /**
- * print_python_list_info - printd info on lists
+ * print_python_list_info - prints info on lists
  * @p: PyObject list
  */
 void print_python_list_info(PyObject *p)
