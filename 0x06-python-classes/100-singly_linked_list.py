@@ -56,7 +56,7 @@ class Node:
 
 class SinglyLinkedList:
     """Defines a class SinglyLinkedList"""
-    def _init__(self):
+    def __init__(self):
         self.head = None
 
     def sorted_insert(self, value):
