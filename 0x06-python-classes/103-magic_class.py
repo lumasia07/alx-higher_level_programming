@@ -2,6 +2,7 @@
 """Python bytecodes to calculate areas & circumfrence"""
 import math
 
+
 class MagicClass:
     """Defines MagicClass"""
     def __init__(self, radius=0):
@@ -9,7 +10,7 @@ class MagicClass:
         Args: radius
         Raises: TypeError: if radius is non-number
         """
-        if typr(radius) is not int and type(radius) is not float:
+        if type(radius) is not int and type(radius) is not float:
             raise TypeError('radius must be number')
         self.__radius = radius
 
