@@ -10,6 +10,8 @@ class MagicClass:
         Args: radius
         Raises: TypeError: if radius is non-number
         """
+        self.__radius = 0
+
         if type(radius) is not int and type(radius) is not float:
             raise TypeError('radius must be number')
         self.__radius = radius
