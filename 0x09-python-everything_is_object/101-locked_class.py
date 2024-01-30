@@ -3,6 +3,6 @@
 
 
 
-def LockedClass:
+class LockedClass:
     """Defines a locked class"""
     __slots__ = ["first_name"]
