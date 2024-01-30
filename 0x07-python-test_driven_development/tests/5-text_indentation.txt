@@ -1,0 +1,37 @@
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+>>> text_indentation("Me.")
+Me
+
+Me.
+
+Me.
+
+>>> text_indentation("Me")
+Me
+
+Me
+
+Me
+
+>>> text_indentation(" Me.")
+Me
+
+Me.
+
+Me.
+
+>>> text_indentation(" Me.")
+Me
+
+Me.
+
+Me.
+
+>>> text_indentation("Me .")
+Me
+
+Me .
+
+Me .
+
+
