@@ -1,37 +1,26 @@
 >>> text_indentation = __import__('5-text_indentation').text_indentation
->>> text_indentation("Me.")
-Me
+>>> text_indentation("This is me. Me.")
+This is me.
 
 Me.
 
-Me.
+>>> text_indentation(" This is me? Me:")
+This is me?
 
->>> text_indentation("Me")
-Me
+Me:
 
-Me
+>>> text_indentation("")
+>>> text_indentation(1)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/alx-higher_level_programming/0x07-python-test_driven_development/5-text_indentation.py", line 14, in text_indentation
+    raise TypeError("text must be a string")
+TypeError: text must be a string
+>>> text_indentation("This.\n Me.\n")
+This.
 
-Me
-
->>> text_indentation(" Me.")
-Me
-
-Me.
-
-Me.
-
->>> text_indentation(" Me.")
-Me
 
 Me.
 
-Me.
-
->>> text_indentation("Me .")
-Me
-
-Me .
-
-Me .
 
 
