@@ -16,7 +16,7 @@ class Solver:
             if self.brd[_] == j or \
                     self.brd[_] - _ == j - i or \
                     self.brd[_] + _ == j + i:
-                        return False
+                return False
         return True
 
     def solve_queens(self, i):
@@ -32,12 +32,8 @@ class Solver:
 
     def print_sol(self):
         """Prints solution"""
-        sol = []
-        for i in range(self.n):
-            l = ['Q' if _ == self.brd[i] else '.' for _ in range(self.n)]
-            sol.append(''.join(l))
-        print('\n'.join(sol))
-        print()
+        sol = [[i, self.brd[i]] for i in range(self.n)]
+        print(sol)
 
     @staticmethod
     def nqueens(n):
