@@ -4,4 +4,4 @@
 
 def lookup(obj):
     """Defines a function lookup with parameter obj"""
-    return [x for x in dir(obj) if not callable(getattr(obj, x))]
+    return dir(obj)
