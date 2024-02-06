@@ -11,7 +11,7 @@ if __name__ == "__main__":
 
     try:
         x = load_from_json_file("add_item.json")
-    except FileNotError:
+    except FileNotFoundError:
         x = []
     x.extend(sys.argv[1:])
     save_to_json_file(x, "add_item.json")
