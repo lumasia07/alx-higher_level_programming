@@ -13,7 +13,7 @@ if __name__ == "__main__":
 
     size = 0
     status_code = {}
-    allowed = ['200', '301', '400', '401', '403', '404', '405', '500']
+    allowed = {'200', '301', '400', '401', '403', '404', '405', '500'}
     count = 0
 
     try:
@@ -21,22 +21,24 @@ if __name__ == "__main__":
             if count = 10:
                 print_stats(size, status_code)
                 count = 1
+                size = 0
+                status_codes = {}
             else:
                 count += 1
 
-            l = l.split()
+            p = l.split()
 
             try:
-                size += int(l[-1])
+                size += int(p[-1])
             except (IndexError, ValueError):
                 pass
 
             try:
-                if l[-2] in allowed:
-                   if status_codes.get(l[-2], -1) == -1:
-                       status_codes[l[-2]] = 1
+                if p[-2] in allowed:
+                    if p[-2] not in status_codes:
+                       status_codes[p[-2]] = 1
                    else:
-                       status_codes[l[-2]] += 1
+                       status_codes[p[-2]] += 1
             except IndexError:
                 pass
 
