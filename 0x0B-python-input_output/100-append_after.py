@@ -4,13 +4,11 @@
 
 def append_after(filename="", search_string="", new_string=""):
     """Open file in read mode"""
-
-    with open(filename, 'r') as file:
-        line = file.readlines()
-
-    """Open filr in write mode"""
-    with open(filename, 'w') as file:
-        for i in lines:
-            file.write(line)
-            if search_string in i:
-                file.write(new_string + '\n')
+    txt = ""
+    with open(filename) as f:
+        for line in f:
+            txt += line
+            if search_string in line:
+                txt += new_string
+    with open(filename, 'w') as g:
+        g.write(txt)
