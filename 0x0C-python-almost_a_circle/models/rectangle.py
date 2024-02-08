@@ -65,3 +65,11 @@ class Rectangle(Base):
         else:
             self.__y = val
 
+    def area(self):
+        """returns area"""
+        return self.__width * self.__height
+
+    def display(self):
+        """Display with #"""
+        for _ in range(self.__height):
+            print('#' * self.__width)
