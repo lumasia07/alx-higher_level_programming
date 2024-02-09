@@ -80,7 +80,7 @@ class Rectangle(Base):
         """Returns the string rep of the rectangle instance"""
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x, self.__y, self.__width, self.__height)
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """Assigns an argument to each attribute"""
         if args and len(args) != 0:
             counter = 0
@@ -99,4 +99,18 @@ class Rectangle(Base):
                 elif counter == 4:
                     self.y = _
                 counter += 1
-
+        elif kwargs and len(kwargs) != 0:
+            for i, j in kwargs.items():
+                if i == "id":
+                    if j is None:
+                        self.__init__(self.width, self.height, self.x, self.y)
+                    else:
+                        self.id = j
+                elif i == "width":
+                    self.width = j
+                elif i == "height":
+                    self.height = j
+                elif i == "x":
+                    self.x = j
+                elif i == "y":
+                    self.y = j
