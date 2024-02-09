@@ -79,3 +79,24 @@ class Rectangle(Base):
     def __str__(self):
         """Returns the string rep of the rectangle instance"""
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x, self.__y, self.__width, self.__height)
+
+    def update(self, *args):
+        """Assigns an argument to each attribute"""
+        if args and len(args) != 0:
+            counter = 0
+            for _ in args:
+                if counter == 0:
+                    if _ is None:
+                        self.__init__(self.width, self.height, self.x, self.y)
+                    else:
+                        self.id = _
+                elif counter == 1:
+                    self.width = _
+                elif counter == 2:
+                    self.height = _
+                elif counter == 3:
+                    self.x = _
+                elif counter == 4:
+                    self.y = _
+                counter += 1
+
