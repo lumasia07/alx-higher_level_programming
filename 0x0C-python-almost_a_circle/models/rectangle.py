@@ -114,3 +114,4 @@ class Rectangle(Base):
                     self.x = j
                 elif i == "y":
                     self.y = j
+
