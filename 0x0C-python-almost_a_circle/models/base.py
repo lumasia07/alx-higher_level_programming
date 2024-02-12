@@ -31,6 +31,16 @@ class Base:
         return json.loads(json_string)
 
     @classmethod
+    def create(cls, **dictionary):
+        "Returns an instance with all attrs"""
+        if cls.__name__ == "Rectangle":
+            dummy = cls(1, 1)
+        elif cls.__name__ is "Square":
+            dummy = cls(1)
+        dummy.update(**dictionary)
+        return dummy
+
+    @classmethod
     def save_to_file(cls, list_objs):
         """JSON to a file"""
         if list_objs is None:
