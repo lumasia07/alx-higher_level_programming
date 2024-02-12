@@ -15,7 +15,19 @@ class Rectangle(Base):
 
     @property
     def width(self):
-        self.__width
+        return self.__width
+
+    @property
+    def height(self):
+        return self.__height
+
+    @property
+    def x(self):
+        return self.__x
+
+    @property
+    def y(self):
+        return self.__y
 
     @width.setter
     def width(self, val):
@@ -26,10 +38,6 @@ class Rectangle(Base):
         else:
             self.__width = val
 
-    @property
-    def height(self):
-        self.__height
-        
     @height.setter
     def height(self, val):
         if not isinstance(val, int):
@@ -39,10 +47,6 @@ class Rectangle(Base):
         else:
             self.__height = val
 
-    @property
-    def x(self):
-        self.__x
-
     @x.setter
     def x(self, val):
         if not isinstance(val, int):
@@ -51,10 +55,6 @@ class Rectangle(Base):
             raise ValueError("x must be > 0")
         else:
             self.__x = val
-
-    @property
-    def y(self):
-        self.__y
 
     @y.setter
     def y(self, val):
