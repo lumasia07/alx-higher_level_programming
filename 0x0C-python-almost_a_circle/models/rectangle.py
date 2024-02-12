@@ -115,3 +115,12 @@ class Rectangle(Base):
                 elif i == "y":
                     self.y = j
 
+    def to_dictionary(self):
+        """Returns dict rep of rectangle"""
+        d = {}
+        d["id"] = self.id
+        d["width"] = self.width
+        d["height"] = self.height
+        d["x"] = self.x
+        d["y"] = self.y
+        return d
