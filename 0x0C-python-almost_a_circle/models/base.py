@@ -39,6 +39,19 @@ class Base:
             dummy = cls(1)
         dummy.update(**dictionary)
         return dummy
+    
+    @classmethod
+    def load_from_file(cls):
+        f_name = cls.__name__ + ".json"
+        s = []
+        try:
+            with open(f_name, 'r') as f:
+                s = cls.from_json_string(f.read())
+            for i, j in enumerate(s):
+                s[i] = cls.create(**s[i])
+        except:
+            pass
+        return s
 
     @classmethod
     def save_to_file(cls, list_objs):
