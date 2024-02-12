@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 import json
-"""Module to base cilass"""
+"""Module to base class"""
 
 
 class Base:
@@ -22,3 +22,13 @@ class Base:
             return "[]"
         else:
             return json.dumps(list_directories)
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        """JSON to a file"""
+        if list_objs is None:
+            list_objs = []
+        f_name = cls.__name__ + ".json"
+        with open(f_name, 'w') as f:
+            s = cls.to_json_string([o.to_dictionary() for o in list_objs])
+            f.write(s)
