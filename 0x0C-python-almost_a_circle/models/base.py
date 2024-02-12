@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""Module to base class"""
+import json
+"""Module to base cilass"""
 
 
 class Base:
@@ -13,3 +14,11 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+
+    @staticmethod
+    def to_json_string(list_directories):
+        """Returns JSON to list dirs"""
+        if list_directories is None or len(list_directories) == 0:
+            return "[]"
+        else:
+            return json.dumps(list_directories)
