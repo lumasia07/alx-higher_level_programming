@@ -66,3 +66,31 @@ class Base:
         with open(f_name, 'w') as f:
             s = cls.to_json_string([o.to_dictionary() for o in list_objs])
             f.write(s)
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """Serialize objects to CSV"""
+        f = cls.__name__ + ".csv"
+        with open(f, 'w', newline='') as cs:
+            wt = csv.writer(cs)
+            for i in list_objs:
+                if cls.__name__ == "Rectangle":
+                    wt.writerow([i.id, i.width, i.height, i.x, i.y])
+                elif cls.__name__ == "Square":
+                    wt.writerow([i.id, i.size, i.x, i.y])
+
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """Decentralize object from the CSV"""
+        f = cls.__name__ + ".csv"
+        objs = []
+        with open(f, 'r') as cs:
+            rd = csv.reader(cs)
+            for row in rd:
+                if cls.__name__ == "Rectangle":
+                    i = cls(int(row[1]), int(row[2]), int(row[3]), int(row[4]), int(row[0]))
+                elif cls.__name__ == "Square":
+                    i = cls(int(row[1]), int(row[2]), int(row[3]), int(row[0]))
+                objs.append(i)
+        return objs
