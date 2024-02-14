@@ -39,11 +39,11 @@ class Base:
     def create(cls, **dictionary):
         "Returns an instance with all attrs"""
         if cls.__name__ == "Rectangle":
-            dummy = cls(1, 1)
+            d = cls(1, 1)
         elif cls.__name__ == "Square":
-            dummy = cls(1)
-        dummy.update(**dictionary)
-        return dummy
+            d = cls(1)
+        d.update(**dictionary)
+        return d
     
     @classmethod
     def load_from_file(cls):
@@ -90,10 +90,10 @@ class Base:
             rd = csv.reader(cs)
             for row in rd:
                 if cls.__name__ == "Rectangle":
-                    i = cls(int(row[1]), int(row[2]), int(row[3]), int(row[4]), int(row[0]))
+                    j = cls(int(row[1]), int(row[2]), int(row[3]), int(row[4]), int(row[0]))
                 elif cls.__name__ == "Square":
-                    i = cls(int(row[1]), int(row[2]), int(row[3]), int(row[0]))
-                objs.append(i)
+                    j = cls(int(row[1]), int(row[2]), int(row[3]), int(row[0]))
+                    objs.append(j)
         return objs
 
     @staticmethod
