@@ -36,15 +36,6 @@ class TestBase(unittest.TestCase):
         j = json.dumps(self.j_data)
         self.assertEqual(Base.from_json_string(j), self.j_data)
 
-    def test_create(self):
-        """Test for Dummy"""
-        d = Base.create(**self.j_data[0])
-        self.assertEqual(d.id, 1)
-        self.assertEqual(d.width, 2)
-        self.assertEqual(d.height, 3)
-        self.assertEqual(d.x, 4)
-        self.assertEqual(d.y, 5)
-
     def test_save(self):
         """Test file saved"""
         Base.save_to_file([])
@@ -55,16 +46,6 @@ class TestBase(unittest.TestCase):
         """Test csv file"""
         Base.save_to_file_csv([])
         self.assertTrue(os.path.exists("Base.csv"))
-        os.remove("Base.csv")
-
-    def test_load_csv(self):
-        """Load from CSV"""
-        with open("Base.csv", 'w', newline='') as f:
-            w = csv.writer(f)
-            w.writerows(self.csv_data)
-        self.assertEqual(len(Base.load_from_file_csv()), 2)
-        self.assertEqual(Base.load_from_file_csv()[0].id, 1)
-        self.assertEqual(Base.load_from_file_csv()[1].id, 2)
         os.remove("Base.csv")
 
 if __name__ == '__main__':

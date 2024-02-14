@@ -93,7 +93,7 @@ class Base:
                     j = cls(int(row[1]), int(row[2]), int(row[3]), int(row[4]), int(row[0]))
                 elif cls.__name__ == "Square":
                     j = cls(int(row[1]), int(row[2]), int(row[3]), int(row[0]))
-                    objs.append(j)
+                objs.append(j)
         return objs
 
     @staticmethod
