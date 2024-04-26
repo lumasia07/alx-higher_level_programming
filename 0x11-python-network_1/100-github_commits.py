@@ -10,7 +10,7 @@ if __name__ == "__main__":
         sys.argv[2], sys.argv[1])
 
     req = requests.get(url)
-    commits =req.json()
+    commits = req.json()
 
     try:
         for _ in range(10):
