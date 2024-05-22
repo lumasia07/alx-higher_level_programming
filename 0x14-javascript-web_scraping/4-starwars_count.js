@@ -11,7 +11,7 @@ request(url, function (err, data, body) {
     for (let res = 0; res < films.length; res++) {
       const chts = films[res].characters;
       for (let i = 0; i < chts.length; i++) {
-        if (chts[i] === 'https://swapi-api.hbtn.io/api/people/18/') {
+        if (chts[i] === 'https://swapi-api.alx-tools.com/api/people/18/') {
 	  c += 1;
 	}
       }
