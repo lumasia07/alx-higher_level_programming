@@ -12,8 +12,8 @@ request(url, function (err, data, body) {
       const chts = films[res].characters;
       for (let i = 0; i < chts.length; i++) {
         if (chts[i] === 'https://swapi-api.alx-tools.com/api/people/18/') {
-	  c += 1;
-	}
+          c += 1;
+        }
       }
     }
     console.log(c);
